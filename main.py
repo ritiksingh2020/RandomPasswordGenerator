@@ -11,16 +11,16 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 password=[]
 for q in range(nr_letters):
-    temp=random.randrange(len(letters))
-    password.append(letters[temp])
+    password.append(random.choice(letters))
+
 for q in range(nr_symbols):
-    temp=random.randrange(len(symbols))
-    password.append(symbols[temp])
+    password.append(random.choice(symbols))
+
 for q in range(nr_numbers):
-    temp=random.randrange(len(numbers))
-    password.append(numbers[temp])
-#print("".join(password))
-for q in range(len(password)):
-    temp=random.randrange(len(password))
-    password[q],password[temp]=password[temp],password[q]
-print("".join(password))
+    password.append(random.choice(numbers))
+
+print(f"Easy Version :{''.join(password)}")
+
+random.shuffle(password)
+
+print(f"Hard Version :{''.join(password)}")
